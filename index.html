@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RDP Parser Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-gray-200 p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-4 text-cyan-400">
+        Recursive Descent Parser
+      </h1>
+      <p class="mb-6 text-gray-400">
+        Enter your code in the box below and click "Parse" to see the results.
+      </p>
+
+      <div class="mb-4">
+        <label for="codeInput" class="block mb-2 font-semibold"
+          >Source Code:</label
+        >
+        <div
+          class="flex bg-gray-800 border border-gray-600 rounded-md focus-within:ring-2 focus-within:ring-cyan-500 font-mono"
+        >
+          <div
+            id="lineNumbers"
+            class="p-3 text-right text-gray-600 select-none w-3 border-r border-gray-600 pr-6"
+            style="line-height: 1.5rem"
+          ></div>
+          <textarea
+            id="codeInput"
+            class="w-full h-48 p-3 bg-transparent rounded-md focus:outline-none resize-none"
+            style="line-height: 1.5rem"
+            spellcheck="false"
+          >
+if (x > 1) then
+  y = 20;
+else {
+  z = 5;
+}
+          </textarea
+          >
+        </div>
+      </div>
+
+      <button
+        id="parseButton"
+        class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition-colors"
+      >
+        Parse
+      </button>
+
+      <div class="mt-8 mb-8 h-auto   grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Lexer Output (Tokens)</h2>
+          <pre
+            id="lexerOutput"
+            class="w-full h-64 p-3 bg-gray-800 border border-gray-600 rounded-md overflow-auto text-sm font-mono"
+          ></pre>
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Parser Output</h2>
+          <pre
+            id="parserOutput"
+            class="w-full h-64 p-3 bg-gray-800 border border-gray-600 rounded-md overflow-auto text-sm font-mono whitespace-pre-wrap"
+          ></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="parser.js"></script> -->
+    <!-- <script src="parserUsingClass.js"></script> -->
+    <script src="parser.js"></script>
+    <script src="lexer.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

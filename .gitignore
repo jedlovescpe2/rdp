@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code editor configuration
+.vscode/
+
+# Node.js dependencies (good practice to include)
+node_modules/
