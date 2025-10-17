@@ -2,14 +2,13 @@
 
 /*
  * Recursive Descent Parser (RDP) Implementation in JavaScript
- * Each function corresponds to a nonterminal in the grammar provided.
+ * Each RDP subprogram corresponds to a non-terminal in the grammar provided.
  */
 
-// --- Parser State & Helpers ---
+// --- Parser State & Helpers --- //
 
-// These variables will hold the token stream and the parser's current position.
-let tokens = [];
-let current = 0;
+let tokens = []; // hold the token stream
+let current = 0; // parser's current position.
 
 // Looks at the next token without consuming it.
 function peek() {
@@ -130,6 +129,7 @@ function parseExpression() {
     );
   }
 }
+
 
 // --- Main Entry Point --- //
 

@@ -1,24 +1,32 @@
-# Recursive Descent Parser Demo
+# Recursive Descent Parser
 
-This project is a simple, web-based demonstration of a recursive descent parser for a small, educational programming language. It includes a lexer to tokenize the source code and a parser to validate its syntax according to a predefined grammar.
+This project is a web-based, interactive demonstration of a **Recursive Descent Parser (RDP)** for a simple, C-like programming language. It provides a hands-on environment to visualize the two core phases of a compiler's front-end: lexical analysis and syntactic analysis.
 
-The entire application is built with plain HTML, CSS (via Tailwind CSS), and JavaScript, and can be run directly in any modern web browser.
+The entire application is built with vanilla HTML, JavaScript, and Tailwind CSS, running directly in the browser with no dependencies.
 
 ## Live Demo
 
-You can view a live demo of this project here: [rdp-jed.netlify.app](https://rdp-jed.netlify.app/)
+**Try it live:** [**rdp-jed.netlify.app**](https://rdp-jed.netlify.app/)
 
 ## Features
 
--   **Recursive Descent Parser:** A handwritten parser that directly implements the language's grammar rules.
--   **Lexer:** A simple tokenizer that converts source code into a stream of tokens.
--   **Web Interface:** An interactive UI to enter code, view the token stream (Lexer Output), and see the validation result (Parser Output).
--   **Syntax Highlighting:** A simple line-numbering system for the code editor.
--   **Error Reporting:** The parser provides clear error messages when it encounters a syntax violation.
+-   **Live Code Editor**: Write code in a simple editor with line numbers.
+-   **Real-time Analysis**: The code is automatically parsed as you type, providing instant feedback.
+-   **Dual Output**: Clearly see the output from both the **Lexer** (token stream) and the **Parser** (syntax validation).
+-   **Example Generators**: Instantly load correct or incorrect code snippets to test the parser's behavior.
+-   **Clear Error Reporting**: The parser identifies syntax errors and reports what it expected vs. what it found.
 
-## Grammar
+## How It Works
 
-The parser is designed to validate the following grammar:
+The application demonstrates a two-stage process:
+
+1.  **Lexical Analysis (`lexer.js`)**: The **Lexer** scans the raw source code and breaks it down into a sequence of "tokens." Each token is a meaningful unit, like a keyword (`if`), an identifier (`x`), an operator (`>`), or a number (`100`).
+
+2.  **Syntactic Analysis (`parser.js`)**: The **Parser** takes this stream of tokens and validates its structure against a predefined grammar. It uses a "Recursive Descent" strategy, where each grammar rule is implemented as a function that may recursively call other functions to process nested structures.
+
+## Language Grammar
+
+The parser is designed to validate the following context-free grammar:
 
 ```
 Statement      -> if ( Condition ) then Statement ElsePart
@@ -36,19 +44,18 @@ RelOp          -> < | > | == | !=
 
 Expression     -> id | num
 ```
-*(ε represents an empty production)*
+*(Note: ε represents an empty production, meaning the rule can produce nothing.)*
 
-## How to Use
+## Running Locally
 
-Since this is a static web project, no build step is required.
+No build process is needed.
 
 1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/jedlovescpe2/rdp
-2.  **Navigate to the directory:**
+    git clone https://github.com/jedlovescpe2/rdp.git
+    ```
+2.  **Navigate into the project directory:**
     ```sh
     cd rdp
     ```
-3.  **Open the `index.html` file** in your favorite web browser.
-
-You can now type code into the source code editor and click "Parse" to see the results.
+3.  **Open `index.html`** in any modern web browser.
