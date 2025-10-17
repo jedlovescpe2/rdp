@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Element References ---
   const codeInput = document.getElementById("codeInput");
   const lineNumbers = document.getElementById("lineNumbers");
-  const parseButton = document.getElementById("parseButton");
   const lexerOutput = document.getElementById("lexerOutput");
   const parserOutput = document.getElementById("parserOutput");
   const generateCorrectBtn = document.getElementById("generateCorrectBtn");
@@ -92,7 +91,6 @@ if (b > 2) then
     lineNumbers.scrollTop = codeInput.scrollTop;
   });
 
-  parseButton.addEventListener("click", parseCode);
 
   generateCorrectBtn.addEventListener("click", () => {
     populateTextarea(correctExamples);
