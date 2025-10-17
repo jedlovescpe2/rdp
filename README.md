@@ -45,17 +45,3 @@ RelOp          -> < | > | == | !=
 Expression     -> id | num
 ```
 *(Note: ε represents an empty production, meaning the rule can produce nothing.)*
-
-## Running Locally
-
-No build process is needed.
-
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/jedlovescpe2/rdp.git
-    ```
-2.  **Navigate into the project directory:**
-    ```sh
-    cd rdp
-    ```
-3.  **Open `index.html`** in any modern web browser.

@@ -34,7 +34,7 @@ function match(expectedType) {
   );
 }
 
-// --- RDP SUBPROGRAMS --- //
+// --- RDP Subprograms --- //
 
 // Grammar: Statement -> if ( Condition ) then Statement ElsePart | while ...
 function parseStatement() {
